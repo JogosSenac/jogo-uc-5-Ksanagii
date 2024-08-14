@@ -10,14 +10,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float vel;
     Rigidbody2D rb;
-    Vector3 moveVector;
+    Vector2 moveVector;
     Animator animator;
     SpriteRenderer sprRen;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        moveVector = new Vector3();
         sprRen = GetComponent<SpriteRenderer>();
     }
 
@@ -61,7 +60,10 @@ public class PlayerMove : MonoBehaviour
 
         moveVector.x = Input.GetAxisRaw("Horizontal");
         moveVector.y = Input.GetAxisRaw("Vertical");
-        moveVector *= vel;
-        rb.velocity = moveVector;
+    }
+    void FixedUpdate()
+    {
+
+        rb.velocity = moveVector * vel;
     }
 }
