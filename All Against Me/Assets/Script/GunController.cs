@@ -20,9 +20,12 @@ public class GunController : MonoBehaviour
         Vector2 offset = new Vector2(mousePos.x - screenPoint.x, mousePos.y - screenPoint.y); // Calcula a distancia exata do ponto da arma ate o mouse
 
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg; // Converte a distancia em angulo
-
+        
         transform.rotation = Quaternion.Euler(0, 0, angle); // transforma o angulo em Z da rotação
 
         sprRenderer.flipY = (mousePos.x < screenPoint.x); // inverte o sprite se o moouse passar do eixo x da arma
+
+
+        
     }
 }
