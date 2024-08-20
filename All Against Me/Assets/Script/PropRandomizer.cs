@@ -23,7 +23,7 @@ public class PropRandomizer : MonoBehaviour
         foreach (GameObject prop in propsSpawnPoints)
         {
             int rand = Random.Range(0, propsSpawnPoints.Count); // cria uma variavel local random ate o numero maximos de spawnpoints
-            GameObject propObject = Instantiate(propsPrefabs[rand], prop.transform.position, Quaternion.identity); // instancia um prop na posição do spawnPoints
+            GameObject propObject = Instantiate(propsPrefabs[rand], prop.transform.position, Quaternion.identity); // instancia um prop na posicao do spawnPoints
             propObject.transform.parent = prop.transform;
         }
     }
