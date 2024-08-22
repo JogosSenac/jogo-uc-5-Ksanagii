@@ -97,6 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76e0d6991736854ab67ab05180bca37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 10
+  vel: 15.6
   dano: 1
-  dirTiro: 0

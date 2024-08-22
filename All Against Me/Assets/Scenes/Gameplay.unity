@@ -638,10 +638,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d8df001ea6d95d44bb0a4855fcd96a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
   mira: {fileID: 1671451905}
   tiroPrefab: {fileID: 2915468528736103281, guid: 8db66ec7188a7e7448289409271b8f61, type: 3}
-  velTiro: 0
+  podeAtirar: 0
+  fireRate: 0.28
 --- !u!1 &631935833
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,7 +937,7 @@ Transform:
   m_GameObject: {fileID: 1671451905}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 0.002, z: 0}
+  m_LocalPosition: {x: 1.265, y: 0.042, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
