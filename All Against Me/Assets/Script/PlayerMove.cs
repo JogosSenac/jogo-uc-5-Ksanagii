@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float vel;
     Rigidbody2D rb;
-    Vector2 moveVector;
+    public Vector2 moveVector;
     Animator animator;
     SpriteRenderer sprRen;
     void Awake()
