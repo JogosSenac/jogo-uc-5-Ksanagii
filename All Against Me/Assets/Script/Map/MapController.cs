@@ -11,7 +11,15 @@ public class MapController : MonoBehaviour
     public LayerMask terrainMask;
     PlayerMove pm;
     public GameObject currentChunk;
-    // Start is called before the first frame update
+
+    [Header("Optimization")]
+    public List<GameObject> spawnedChunks;
+    GameObject latestChunk; // vai guardar um ultimo chunk gerado
+    public float maxOpDist; // Tem que ser maior e superior ao tamanho do tilemap (tanto em largura quanto altura)
+    float OpDist;
+    float optimizerCooldown;
+    public float optimizerCooldownDur;
+
     void Start()
     {
         pm = FindObjectOfType<PlayerMove>();
@@ -22,99 +30,133 @@ public class MapController : MonoBehaviour
     void Update()
     {
         ChunkChecker();
+        ChunkOptimizer();
+
     }
 
     void ChunkChecker()
     {
         if (!currentChunk) { return; }
+
         #region
         // Se eu estiver me movendo para direita
         if (pm.moveVector.x > 0 && pm.moveVector.y == 0) // direita
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, 0, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Direita").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(20, 0, 0);
+                noTerrainPositions = currentChunk.transform.Find("Direita").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x < 0 && pm.moveVector.y == 0) // esquerda
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(-20, 0, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Esquerda").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(-20, 0, 0);
+                noTerrainPositions = currentChunk.transform.Find("Esquerda").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x > 0 && pm.moveVector.y > 0) // direita cima
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, 20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Direita Cima").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(20, 20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Direita Cima").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x == 0 && pm.moveVector.y > 0) // cima
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(0, 20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Cima").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(0, 20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Cima").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x < 0 && pm.moveVector.y > 0) // esquerda cima
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(-20, 20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Esquerda Cima").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(-20, 20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Esquerda Cima").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x == 0 && pm.moveVector.y < 0) // baixo
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(0, -20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Baixo").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(0, -20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Baixo").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x < 0 && pm.moveVector.y < 0) // esquerda baixo
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(-20, -20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Esquerda Baixo").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(-20, -20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Esquerda Baixo").position;
                 SpawnChunk();
             }
         }
         else if (pm.moveVector.x > 0 && pm.moveVector.y < 0) // direita baixo
         {
             // se não existir um objeto do layer terrain numa determinada area
-            if (!Physics2D.OverlapCircle(player.transform.position + new Vector3(20, -20, 0), checkerRadius, terrainMask))
+            if (!Physics2D.OverlapCircle(currentChunk.transform.Find("Direita Baixo").position, checkerRadius, terrainMask))
             {
                 // a variavel que indica que nao tem terrain fica setada para a posicao
-                noTerrainPositions = player.transform.position + new Vector3(20, -20, 0);
+                noTerrainPositions = currentChunk.transform.Find("Direita Baixo").position;
                 SpawnChunk();
             }
         }
         #endregion
     }
+
     void SpawnChunk()
     {
         int random = Random.Range(0, terrainChunks.Count);
-        Instantiate(terrainChunks[random], noTerrainPositions, Quaternion.identity);
+        latestChunk = Instantiate(terrainChunks[random], noTerrainPositions, Quaternion.identity);
+        spawnedChunks.Add(latestChunk);
     }
 
+    void ChunkOptimizer()
+    {
+        optimizerCooldown -= Time.deltaTime;
+        if(optimizerCooldown <= 0f)
+        {
+            optimizerCooldown = optimizerCooldownDur;
+        }
+        else
+        {
+            return;
+        }
+
+        foreach (var chunk in spawnedChunks)
+        {
+            OpDist = Vector3.Distance(player.transform.position, chunk.transform.position); // distancia entre o player e o chunk antigo
+            /* verificacao simplificada
+            if (OpDist > maxOpDist)
+            {
+                chunk.SetActive(false);
+            }
+            else
+            {
+                chunk.SetActive(true);
+            }
+            */
+
+            chunk.SetActive(OpDist <= maxOpDist); // se a distancia for maior que a distancia maxima, ele desativa
+        }
+    }
 }
