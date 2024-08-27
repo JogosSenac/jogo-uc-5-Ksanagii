@@ -10,9 +10,11 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float vel;
     Rigidbody2D rb;
+    
     public Vector2 moveVector;
     Animator animator;
     SpriteRenderer sprRen;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

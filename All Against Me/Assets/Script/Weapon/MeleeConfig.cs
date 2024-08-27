@@ -7,11 +7,13 @@ public class MeleeConfig : MonoBehaviour
     public float vel;
     public float lifeTime;
     public float dano;
+    public List<GameObject> markedEnemies;
     // MeleeController meleeSpawn;
 
     void Awake()
     {
         Invoke("DestroyMelee", lifeTime);
+        markedEnemies = new List<GameObject>();
         // meleeSpawn = FindObjectOfType<MeleeController>();
     }
 
@@ -31,11 +33,12 @@ public class MeleeConfig : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy"))
+        if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>(); // Pega os dados de quem colidiu
             enemy.TakeDamage(dano); // faz o inimigo tomar dano
-
+            markedEnemies.Add(col.gameObject); // marca os inimigos que ja foram acertados para não levarem outro hit
+            
         }
     }
 
