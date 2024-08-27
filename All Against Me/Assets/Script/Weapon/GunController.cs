@@ -9,7 +9,7 @@ public class GunController : MonoBehaviour
     SpriteRenderer sprRenderer;
     public GameObject mira;
     public GameObject tiroPrefab;
-    [SerializeField] private bool podeAtirar;
+    protected bool podeAtirar;
     public float fireRate;
 
     void Start()
