@@ -8,15 +8,20 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(Animator))]
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float vel;
+    // Fisica
     Rigidbody2D rb;
+    [HideInInspector] public Vector2 moveVector;
     
-    public Vector2 moveVector;
+    // Animação
     Animator animator;
     SpriteRenderer sprRen;
 
+
+    PlayerStats player;
+
     void Awake()
     {
+        player = GetComponent<PlayerStats>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sprRen = GetComponent<SpriteRenderer>();
@@ -66,6 +71,6 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
 
-        rb.velocity = moveVector * vel;
+        rb.velocity = moveVector * player.currentMoveSpeed;
     }
 }

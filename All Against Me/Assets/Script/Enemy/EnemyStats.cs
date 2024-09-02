@@ -7,9 +7,9 @@ public class EnemyStats : MonoBehaviour
     public EnemyScriptableObject enemyData;
 
     // stats atuais (current)
-    protected float currentMoveSpeed;
-    protected float currentMaxHealth;
-    protected float currentDamage;
+    [HideInInspector] public float currentMoveSpeed;
+    [HideInInspector] public float currentMaxHealth;
+    [HideInInspector] public float currentDamage;
 
     void Awake()
     {
@@ -29,5 +29,16 @@ public class EnemyStats : MonoBehaviour
     public void Kill()
     {
         Destroy(gameObject);
+    }
+
+    // se colar no inimigo
+    void OnTriggerStay2D(Collider2D col)
+    {
+        // verifica se e o player, pega o metodo do player levar dano e aplica o dano
+        if(col.CompareTag("Player"))
+        {
+            PlayerStats plStats = col.gameObject.GetComponent<PlayerStats>();
+            plStats.TakeDamage(currentDamage);
+        }
     }
 }

@@ -15,6 +15,7 @@ public class MeleeConfig : MonoBehaviour
         Invoke("DestroyMelee", lifeTime);
         markedEnemies = new List<GameObject>();
         // meleeSpawn = FindObjectOfType<MeleeController>();
+        
     }
 
     // Update is called once per frame

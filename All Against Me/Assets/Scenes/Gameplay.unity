@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 237447896}
   - component: {fileID: 237447897}
   - component: {fileID: 237447898}
+  - component: {fileID: 237447899}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -231,12 +232,13 @@ Transform:
   m_GameObject: {fileID: 237447891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.3, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 629984325}
   - {fileID: 285427038}
+  - {fileID: 1797430025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &237447896
@@ -296,7 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ac33d907318da468347e72b5b2c981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 5
   moveVector: {x: 0, y: 0}
 --- !u!95 &237447898
 Animator:
@@ -319,6 +320,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &237447899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237447891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9bb99f205fe654ab49156d5a3e7c61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterData: {fileID: 11400000, guid: d02441f2b19aa3f4da53ff8d2f7a33b6, type: 2}
+  currentHealth: 0
+  currentRecovery: 0
+  currentMight: 0
+  currentMoveSpeed: 0
+  currentProjectileSpeed: 0
+  currentMagnet: 0
+  level: 1
+  experience: 0
+  experienceCap: 100
+  experienceCapIncrease: 30
+  invincibilityDuration: 3
 --- !u!1 &285427037
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +540,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 237447895}
   offset: {x: 0, y: 0, z: -10}
+--- !u!1001 &524789558
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11779672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763872066479184642, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_Name
+      value: Skittering Hand (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497916441265220458, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
 --- !u!1 &629984324
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +778,128 @@ MonoBehaviour:
   - {fileID: 340798328}
   maxOpDist: 50
   optimizerCooldownDur: 1
+--- !u!1001 &1371079041
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11779672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763872066479184642, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_Name
+      value: Skittering Hand (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497916441265220458, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+--- !u!1001 &1605407725
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.162
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11779672
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1763872066479184642, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_Name
+      value: Skittering Hand (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497916441265220458, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
 --- !u!1 &1671451905
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +962,86 @@ Transform:
   m_Children: []
   m_Father: {fileID: 629984325}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1797430024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797430025}
+  - component: {fileID: 1797430027}
+  - component: {fileID: 1797430026}
+  m_Layer: 0
+  m_Name: MagnetArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797430025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797430024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 237447895}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1797430026
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797430024}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1797430027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797430024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1506e42baaa678d48a519b7435f2d3b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5202136512433084509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -825,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.284
+      value: -0.162
       objectReference: {fileID: 0}
     - target: {fileID: 1476979732248645218, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -863,6 +1151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skittering Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 6497916441265220458, guid: b21f9fe9dc39ebd48886b01c78b0d33a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -877,3 +1169,6 @@ SceneRoots:
   - {fileID: 5202136512433084509}
   - {fileID: 815099644}
   - {fileID: 6100669499332253238}
+  - {fileID: 524789558}
+  - {fileID: 1605407725}
+  - {fileID: 1371079041}

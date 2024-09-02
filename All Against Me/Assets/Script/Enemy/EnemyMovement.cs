@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    public EnemyScriptableObject enemyData;
+    EnemyStats enemy;
     SpriteRenderer spr;
     
     // Start is called before the first frame update
     void Start()
     {
+        enemy = GetComponent<EnemyStats>();
         player = FindObjectOfType<PlayerMove>().transform;
         spr = GetComponent<SpriteRenderer>();
     }
@@ -18,7 +19,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime); // move em direcao ao player
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemy.currentMoveSpeed * Time.deltaTime); // move em direcao ao player
         spr.flipX = (transform.position.x > player.transform.position.x); // gira quando passar do pivot do player
     }
 }
