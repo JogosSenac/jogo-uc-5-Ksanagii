@@ -212,7 +212,6 @@ ScriptedImporter:
     cells:
     - name: BoundCadaver_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -221,7 +220,6 @@ ScriptedImporter:
       spriteId: 685affde3588f744abd9d8a03a83e4c3
     - name: BoundCadaver_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -230,7 +228,6 @@ ScriptedImporter:
       spriteId: e6f3dcfc9b23d784fac1a2eaf2ea2cf4
     - name: BoundCadaver_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 0
@@ -239,7 +236,6 @@ ScriptedImporter:
       spriteId: f02d9ff5f0085da4baa55a19215aaecf
     - name: BoundCadaver_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 4
         y: 0

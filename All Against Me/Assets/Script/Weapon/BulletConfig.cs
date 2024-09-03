@@ -6,6 +6,11 @@ public class BulletConfig : MonoBehaviour
 {
     public float vel;
     public float dano;
+
+    [Header("Knockback")]
+    public float knockbackForce;
+    public float knockbackDur;
+
     [Header("Quantos inimigos pode perfurar")]
     public int pierce; // quatiedade de inimigos que pode perfurar
 
@@ -36,7 +41,7 @@ public class BulletConfig : MonoBehaviour
         if (col.CompareTag("Enemy"))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>(); // Pega os dados de quem colidiu
-            enemy.TakeDamage(dano); // faz o inimigo tomar dano
+            enemy.TakeDamage(dano, transform.position, knockbackForce, knockbackDur); // faz o inimigo tomar dano
             ReducePierce();
         }
     }
@@ -46,7 +51,7 @@ public class BulletConfig : MonoBehaviour
         pierce--;
         if (pierce <= 0)
         {
-            DestroyBullet(); // destroy bala apos acabar todas perfuração
+            DestroyBullet(); // destroy bala apos acabar todas perfuraï¿½ï¿½o
             
         }
     }

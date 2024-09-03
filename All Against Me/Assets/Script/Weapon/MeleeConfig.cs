@@ -7,6 +7,11 @@ public class MeleeConfig : MonoBehaviour
     public float vel;
     public float lifeTime;
     public float dano;
+
+    [Header("Knockback")]
+    public float knockbackForce;
+    public float knockbackDur;
+
     public List<GameObject> markedEnemies;
     // MeleeController meleeSpawn;
 
@@ -37,7 +42,7 @@ public class MeleeConfig : MonoBehaviour
         if (col.CompareTag("Enemy") && !markedEnemies.Contains(col.gameObject))
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>(); // Pega os dados de quem colidiu
-            enemy.TakeDamage(dano); // faz o inimigo tomar dano
+            enemy.TakeDamage(dano, transform.position, knockbackForce, knockbackDur); // faz o inimigo tomar dano
             markedEnemies.Add(col.gameObject); // marca os inimigos que ja foram acertados para não levarem outro hit
             
         }

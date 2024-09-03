@@ -157,7 +157,7 @@ PolygonCollider2D:
       - {x: -0.27732515, y: 0.81838715}
       - {x: -0.40608692, y: 0.85849327}
       - {x: -0.58839047, y: 0.86597955}
-      - {x: -0.40381455, y: -0.0054335333}
+      - {x: -0.54147756, y: -0.012535159}
       - {x: -0.5832224, y: -0.841578}
       - {x: -0.2687167, y: -0.81651133}
       - {x: 0.027781963, y: -0.6062225}
@@ -180,7 +180,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vel: 2
   lifeTime: 0.34
-  dano: 10
+  dano: 20
+  knockbackForce: 6
+  knockbackDur: 0.2
+  markedEnemies: []
 --- !u!50 &8428787526486101575
 Rigidbody2D:
   serializedVersion: 4

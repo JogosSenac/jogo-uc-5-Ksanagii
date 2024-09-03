@@ -212,7 +212,6 @@ ScriptedImporter:
     cells:
     - name: DecrepitBones_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -221,7 +220,6 @@ ScriptedImporter:
       spriteId: 7cda641e31c67cc4a99cb2c8d53e34e6
     - name: DecrepitBones_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -230,7 +228,6 @@ ScriptedImporter:
       spriteId: 80b473beea804e644a8acec1b6f943ee
     - name: DecrepitBones_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -239,7 +236,6 @@ ScriptedImporter:
       spriteId: 5e6a87e2a613e3d42abcd61c713bf512
     - name: DecrepitBones_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0

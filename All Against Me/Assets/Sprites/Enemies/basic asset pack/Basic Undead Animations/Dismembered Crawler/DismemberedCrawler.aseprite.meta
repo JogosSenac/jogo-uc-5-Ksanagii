@@ -212,7 +212,6 @@ ScriptedImporter:
     cells:
     - name: DismemberedCrawler_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -221,7 +220,6 @@ ScriptedImporter:
       spriteId: 2eda74794958d1044a76011e4dbd5e36
     - name: DismemberedCrawler_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -230,7 +228,6 @@ ScriptedImporter:
       spriteId: 71c353a959e0d7b4985f3441d2d919e3
     - name: DismemberedCrawler_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -239,7 +236,6 @@ ScriptedImporter:
       spriteId: 98271528da64327448ba6d5679aab8de
     - name: DismemberedCrawler_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

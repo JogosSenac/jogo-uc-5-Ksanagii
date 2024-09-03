@@ -212,7 +212,6 @@ ScriptedImporter:
     cells:
     - name: GiantRoyalScarab_Frame_0
       frameIndex: 0
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -221,7 +220,6 @@ ScriptedImporter:
       spriteId: 7fede9899a158df46a1f8e3e53986179
     - name: GiantRoyalScarab_Frame_1
       frameIndex: 1
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -230,7 +228,6 @@ ScriptedImporter:
       spriteId: b9f0ebbc74b5d0d4d927f8aa7e57df61
     - name: GiantRoyalScarab_Frame_2
       frameIndex: 2
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -239,7 +236,6 @@ ScriptedImporter:
       spriteId: 3c1d5da389548ff41a9896a324f64f1b
     - name: GiantRoyalScarab_Frame_3
       frameIndex: 3
-      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

@@ -101,6 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vel: 17.5
   dano: 10
+  knockbackForce: 5
+  knockbackDur: 0.07
+  pierce: 0
 --- !u!60 &5366770549774051377
 PolygonCollider2D:
   m_ObjectHideFlags: 0

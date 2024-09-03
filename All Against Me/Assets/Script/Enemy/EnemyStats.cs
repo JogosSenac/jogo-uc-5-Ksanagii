@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class EnemyStats : MonoBehaviour
 {
@@ -14,15 +14,16 @@ public class EnemyStats : MonoBehaviour
     public float deSpawnDistance = 20f;
     Transform player;
 
-    /*
+    
     [Header("Damage Feedback")]
     public Color damageColor = new Color(1, 0, 0, 1);
     public float damageFlashDuration = 0.2f;
-    public float deathFadeTime = 0.6f;
+    public float deathFadeTime = 0.1f;
     Color originalColor;
     SpriteRenderer sr;
     EnemyMovement movement;
-    */
+    Collider colisor;
+    
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
@@ -33,10 +34,11 @@ public class EnemyStats : MonoBehaviour
     private void Start()
     {
         player = FindAnyObjectByType<PlayerStats>().transform;
-        //sr = GetComponent<SpriteRenderer>();
-        //originalColor = sr.color;
+        sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color;
 
-        //movement = GetComponent<EnemyMovement>();
+        movement = GetComponent<EnemyMovement>();
+        colisor = GetComponent<Collider>();
     }
 
     private void Update()
@@ -47,23 +49,29 @@ public class EnemyStats : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg,  Vector2 sourcePosition, float knockbackForce = 5f, float knockbackDuration = 0.2f)
     {
         currentMaxHealth -= dmg; // diminui o HP
+        StartCoroutine(DamageFlash());
+
+        if (knockbackForce > 0)
+        {
+            Vector2 dir = (Vector2)transform.position - sourcePosition;
+            movement.Knockback(dir.normalized * knockbackForce, knockbackDuration);
+        }
+
         if(currentMaxHealth <= 0)
         {
             Kill(); // cabou o Life ele morre
         }
     }
 
-    /*
     IEnumerator DamageFlash()
     {
         sr.color = damageColor;
         yield return new WaitForSeconds(damageFlashDuration);
         sr.color = originalColor;
     }
-    */
 
     public void Kill()
     {

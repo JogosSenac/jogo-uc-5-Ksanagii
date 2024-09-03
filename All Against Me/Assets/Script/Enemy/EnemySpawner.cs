@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public List<Wave> waves;
-    public int currentWaveCount; // é um indexador para ter de referencia qual a lista atual [comeca de 0]
+    public int currentWaveCount; // e um indexador para ter de referencia qual a lista atual [comeca de 0]
 
     [Header("Spawn Atributes")]
     float spawnTimer;
@@ -57,6 +57,7 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnTimer = 0;
             spawnEnemies();
+            
         }
     }
 
