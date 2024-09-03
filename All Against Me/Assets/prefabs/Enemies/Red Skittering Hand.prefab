@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6104310613426307366}
   - component: {fileID: 5005290319120139820}
   m_Layer: 0
-  m_Name: Skittering Hand
+  m_Name: Red Skittering Hand
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -7831320796706748632, guid: 889d2b1b1a8665e469ce2aefd35e5f29, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.7311321, b: 0.7311321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efec8c1ba02893c4294e2fb489518435, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: b11e635f617def343965270c0bb658cc, type: 2}
+  enemyData: {fileID: 11400000, guid: 018371c2761145143bb91652a6127018, type: 2}
   currentMoveSpeed: 0
   currentMaxHealth: 0
   currentDamage: 0
@@ -234,8 +234,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.4174149}
-  m_Size: {x: 0.7, y: 0.7548299}
+  m_Offset: {x: 0, y: 0.41266012}
+  m_Size: {x: 0.7, y: 0.7453203}
   m_Direction: 0
 --- !u!1 &8265144253515500056
 GameObject:

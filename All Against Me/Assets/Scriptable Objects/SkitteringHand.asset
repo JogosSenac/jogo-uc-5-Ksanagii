@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d356a2b2af4d6334abb98537aa805b9b, type: 3}
   m_Name: SkitteringHand
   m_EditorClassIdentifier: 
-  moveSpeed: 3.52
+  moveSpeed: 3
   maxHealth: 50
-  damage: 3.57
+  damage: 6

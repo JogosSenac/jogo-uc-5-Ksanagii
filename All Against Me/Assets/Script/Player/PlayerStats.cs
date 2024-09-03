@@ -44,11 +44,11 @@ public class PlayerStats : MonoBehaviour
     {
         if(invincibilityTimer > 0)
         {
-
             invincibilityTimer -= Time.timeScale;
         }
         else if(isInvincible)
         {
+
             isInvincible = false;
         }
 
@@ -122,7 +122,7 @@ public class PlayerStats : MonoBehaviour
         }
 
         // se passar do maximo de life, retorna ao normal
-        if(currentHealth < characterData.MaxHealth)
+        if(currentHealth > characterData.MaxHealth)
         {
             currentHealth = characterData.MaxHealth;
         }

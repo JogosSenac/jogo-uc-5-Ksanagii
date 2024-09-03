@@ -11,12 +11,42 @@ public class EnemyStats : MonoBehaviour
     [HideInInspector] public float currentMaxHealth;
     [HideInInspector] public float currentDamage;
 
+    public float deSpawnDistance = 20f;
+    Transform player;
+
+    /*
+    [Header("Damage Feedback")]
+    public Color damageColor = new Color(1, 0, 0, 1);
+    public float damageFlashDuration = 0.2f;
+    public float deathFadeTime = 0.6f;
+    Color originalColor;
+    SpriteRenderer sr;
+    EnemyMovement movement;
+    */
     void Awake()
     {
         currentMoveSpeed = enemyData.MoveSpeed;
         currentMaxHealth = enemyData.MaxHealth;
         currentDamage = enemyData.Damage;
     }
+
+    private void Start()
+    {
+        player = FindAnyObjectByType<PlayerStats>().transform;
+        //sr = GetComponent<SpriteRenderer>();
+        //originalColor = sr.color;
+
+        //movement = GetComponent<EnemyMovement>();
+    }
+
+    private void Update()
+    {
+        if(Vector2.Distance(transform.position, player.position) >= deSpawnDistance)
+        {
+            ReturnEnemy();
+        }
+    }
+
     public void TakeDamage(float dmg)
     {
         currentMaxHealth -= dmg; // diminui o HP
@@ -25,6 +55,15 @@ public class EnemyStats : MonoBehaviour
             Kill(); // cabou o Life ele morre
         }
     }
+
+    /*
+    IEnumerator DamageFlash()
+    {
+        sr.color = damageColor;
+        yield return new WaitForSeconds(damageFlashDuration);
+        sr.color = originalColor;
+    }
+    */
 
     public void Kill()
     {
@@ -40,5 +79,17 @@ public class EnemyStats : MonoBehaviour
             PlayerStats plStats = col.gameObject.GetComponent<PlayerStats>();
             plStats.TakeDamage(currentDamage);
         }
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        es.OnKilledEnemy();
+    }
+
+    void ReturnEnemy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        transform.position = player.position + es.relativeSpawnPositions[Random.Range(0, es.relativeSpawnPositions.Count)].position;
     }
 }

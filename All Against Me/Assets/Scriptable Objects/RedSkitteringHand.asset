@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35afc7c8c4de8d64196cff6ec729b9da, type: 3}
-  m_Name: GunCharacter
+  m_Script: {fileID: 11500000, guid: d356a2b2af4d6334abb98537aa805b9b, type: 3}
+  m_Name: RedSkitteringHand
   m_EditorClassIdentifier: 
-  startingWeapon: {fileID: 0}
-  maxHealth: 200
-  recovery: 4.97
-  moveSpeed: 3.53
-  might: 0
-  projectileSpeed: 0
-  magnet: 1.5
+  moveSpeed: 4
+  maxHealth: 60
+  damage: 6
