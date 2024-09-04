@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: VampireBat_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 3
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: 24a62fece20f01444a748efc0fd0ff7c
     - name: VampireBat_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 2
         y: 2
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: 931090405b0745e489365a6628b015e6
     - name: VampireBat_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 1
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: 3772174ba09e3894f897128b62e6bbc7
     - name: VampireBat_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 4

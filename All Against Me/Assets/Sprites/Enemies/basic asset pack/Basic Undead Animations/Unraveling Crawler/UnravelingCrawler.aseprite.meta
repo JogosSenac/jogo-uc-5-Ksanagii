@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: UnravelingCrawler_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: e67331438e736ee4f85d3cb8f4bb82ad
     - name: UnravelingCrawler_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: 8347b64e025bbcc40b72677076660ec6
     - name: UnravelingCrawler_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: a865295c13aa3b84eb278234f1839ba6
     - name: UnravelingCrawler_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

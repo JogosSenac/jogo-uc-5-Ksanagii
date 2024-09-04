@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: MutilatedStumbler_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: 2a13e6898c2285a4daf9edb53a1a98bd
     - name: MutilatedStumbler_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: af8b35422d6a09b408344541c5839b8e
     - name: MutilatedStumbler_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: faad99e64068c574db69bfada8686df3
     - name: MutilatedStumbler_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 3
         y: 0

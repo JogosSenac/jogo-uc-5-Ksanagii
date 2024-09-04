@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: ToxicHound_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: d87dcb73b019b4643b17b8c461146fe0
     - name: ToxicHound_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: 6549f56aaa55610438ed0cdaa5eb8e26
     - name: ToxicHound_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: 92e184209d066b04d86265958628b247
     - name: ToxicHound_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0

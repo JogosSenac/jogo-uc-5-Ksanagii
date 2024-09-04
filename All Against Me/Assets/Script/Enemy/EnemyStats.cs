@@ -22,7 +22,6 @@ public class EnemyStats : MonoBehaviour
     Color originalColor;
     SpriteRenderer sr;
     EnemyMovement movement;
-    Collider colisor;
     
     void Awake()
     {
@@ -38,7 +37,6 @@ public class EnemyStats : MonoBehaviour
         originalColor = sr.color;
 
         movement = GetComponent<EnemyMovement>();
-        colisor = GetComponent<Collider>();
     }
 
     private void Update()

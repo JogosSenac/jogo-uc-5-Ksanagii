@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuPause : MonoBehaviour
 {
@@ -50,4 +49,8 @@ public class MenuPause : MonoBehaviour
         Application.Quit();
     }
 
+    public void MudarCena(string cena)
+    {
+        SceneManager.LoadScene(cena);
+    }
 }

@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: GhastlyEye_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 1
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: e22e73821f7fe0146b9d75f167fac4d8
     - name: GhastlyEye_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: f678d0bdfd8204f4d82e3b344422061f
     - name: GhastlyEye_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 1
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: 89de98b367e2ca446b87fe252fde695f
     - name: GhastlyEye_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 2

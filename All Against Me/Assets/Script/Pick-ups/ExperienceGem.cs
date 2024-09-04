@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExperienceGem : MonoBehaviour, ICollectible
 {
@@ -27,6 +26,10 @@ public class ExperienceGem : MonoBehaviour, ICollectible
         if (activeMag)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, 5f * Time.deltaTime);
+        }
+        if(SceneManager.GetActiveScene().name == "Menu")
+        {
+            Destroy(this.gameObject);
         }
     }
 

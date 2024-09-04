@@ -212,6 +212,7 @@ ScriptedImporter:
     cells:
     - name: BrittleArcher_Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -220,6 +221,7 @@ ScriptedImporter:
       spriteId: d3ff91beb823e1545ba174b2b71ec29f
     - name: BrittleArcher_Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -228,6 +230,7 @@ ScriptedImporter:
       spriteId: 3d96c5d7891d81745a9956d87f31473b
     - name: BrittleArcher_Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0
@@ -236,6 +239,7 @@ ScriptedImporter:
       spriteId: b481f3634a85c9c43a1fe7774060f244
     - name: BrittleArcher_Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 1
         y: 0

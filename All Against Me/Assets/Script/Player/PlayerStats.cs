@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     [HideInInspector] public float currentProjectileSpeed;
     [HideInInspector] public float currentMagnet;
 
-    bool isDead;
+    public bool isDead;
 
     // experience
 
@@ -28,6 +28,11 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("UI")]
+    public Image healthBar;
+    public TextMeshProUGUI levelText;
+    public GameObject gameOverUI;
+
     void Awake()
     {
 
@@ -40,6 +45,11 @@ public class PlayerStats : MonoBehaviour
         currentMagnet = characterData.Magnet;
     }
 
+    void Start()
+    {
+        UpdateHealthBar();
+        UpdateLevelBar();
+    }
     void Update()
     {
         if(invincibilityTimer > 0)
@@ -87,6 +97,7 @@ public class PlayerStats : MonoBehaviour
             {
                 experienceCap += experienceCapIncrease;
             }
+            UpdateLevelBar();
         }
     }
 
@@ -104,13 +115,26 @@ public class PlayerStats : MonoBehaviour
                 Kill();
             }
         }
+        UpdateHealthBar();
+    }
 
+    void UpdateHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / characterData.MaxHealth;
+    }
+
+    void UpdateLevelBar()
+    {
+        levelText.text = "Lv. " + level;
     }
 
     public void Kill()
     {
         isDead = false;
         Debug.Log("Ta mortinho da silva");
+        gameOverUI.SetActive(true);
+
+        Destroy(gameObject);
     }
 
     void RecoveryHealth()
