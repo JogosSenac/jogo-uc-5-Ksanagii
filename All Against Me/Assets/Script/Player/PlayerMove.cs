@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     [HideInInspector] public Vector2 moveVector;
     
-    // Animação
+    // Animaï¿½ï¿½o
     Animator animator;
     SpriteRenderer sprRen;
 
@@ -68,6 +68,6 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
 
-        rb.velocity = moveVector * player.currentMoveSpeed;
+        rb.linearVelocity = moveVector * player.currentMoveSpeed;
     }
 }
